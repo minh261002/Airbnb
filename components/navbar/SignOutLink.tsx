@@ -1,11 +1,21 @@
+"use client"
+
 import React from 'react'
-import { LuUser2 } from 'react-icons/lu'
+import { SignOutButton } from '@clerk/nextjs'
+import { useToast } from '../ui/use-toast'
 
 const SignOutLink = () => {
+    const { toast } = useToast();
+    const handleSignOut = async () => {
+        toast({ description: 'You have been signed out.' })
+    }
+
     return (
-        <div>
-            soign out
-        </div>
+        <SignOutButton redirectUrl='/'>
+            <button className='w-full text-left' onClick={handleSignOut}>
+                Log out
+            </button>
+        </SignOutButton>
     )
 }
 
