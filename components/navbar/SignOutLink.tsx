@@ -1,8 +1,11 @@
 import React from 'react'
+import { LuUser2 } from 'react-icons/lu'
 
 const SignOutLink = () => {
     return (
-        <div>SignOutLink</div>
+        <div>
+            soign out
+        </div>
     )
 }
 
