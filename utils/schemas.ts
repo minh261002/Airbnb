@@ -70,7 +70,7 @@ export const propertySchema = z.object({
     description: z.string().refine(
         (description) => {
             const wordCount = description.split(' ').length;
-            return wordCount >= 10 && wordCount <= 1000;
+            return wordCount >= 1 && wordCount <= 1000;
         },
         {
             message: 'Description must be between 10 and 1000 words.',
