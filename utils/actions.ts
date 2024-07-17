@@ -405,7 +405,7 @@ export const createBookingAction = async (prevState: {
     if (!property) {
         return { message: 'Property not found' };
     }
-    const { total, totalNights } = calculateTotals({
+    const { orderTotal, totalNights } = calculateTotals({
         checkIn,
         checkOut,
         price: property.price,
@@ -416,7 +416,7 @@ export const createBookingAction = async (prevState: {
             data: {
                 checkIn,
                 checkOut,
-                orderTotal: total,
+                orderTotal,
                 totalNights,
                 profileId: user.id,
                 propertyId,
