@@ -1,6 +1,5 @@
 import FavoriteToggleButton from '@/components/card/FavoriteToggleButton';
 import PropertyRating from '@/components/card/PropertyRating';
-import BookingCalendar from '@/components/properties/BookingCalendar';
 import BreadCrumbs from '@/components/properties/BreadCrumbs';
 import ImageContainer from '@/components/properties/ImageContainer';
 import PropertyDetails from '@/components/properties/PropertyDetails';
@@ -15,7 +14,25 @@ import PropertyMap from '@/components/properties/PropertyMap';
 import SubmitReview from '@/components/reviews/SubmitReview';
 import PropertyReviews from '@/components/reviews/PropertyReviews';
 import { auth } from '@clerk/nextjs/server'
+import { Skeleton } from '@/components/ui/skeleton';
+import dynamic from 'next/dynamic';
 
+const DynamicMap = dynamic(
+    () => import('@/components/properties/PropertyMap'),
+    {
+        ssr: false,
+        loading: () => <Skeleton className='h-[400px] w-full' />,
+    }
+)
+
+
+const DynamicBookingWrapper = dynamic(
+    () => import('@/components/booking/BookingWrapper'),
+    {
+        ssr: false,
+        loading: () => <Skeleton className='h-[200px] w-full' />,
+    }
+);
 
 async function PropertyDetailsPage({ params }: { params: { id: string } }) {
     const property = await fetchPropertyDetails(params.id);
@@ -28,7 +45,7 @@ async function PropertyDetailsPage({ params }: { params: { id: string } }) {
     const { userId } = auth();
     const isNotOwner = property.profile.clerkId !== userId;
     const reviewDoesNotExist =
-        userId && isNotOwner && !(await findExistingReview(userId, property.id));
+        userId && isNotOwner && !(await findExistingReview(userId, property.id))
 
     return (
         <section>
@@ -59,7 +76,7 @@ async function PropertyDetailsPage({ params }: { params: { id: string } }) {
                     <PropertyMap countryCode={property.country} />
                 </div>
                 <div className="lg:col-span-4 flex flex-col items-center">
-                    <BookingCalendar />
+                    <DynamicBookingWrapper propertyId={property.id} price={property.price} bookings={property.bookings} />
                 </div>
             </section>
 
