@@ -25,13 +25,14 @@ function PropertyCard({ property }: { property: PropertyCardProps }) {
                 </div>
                 <div className='flex justify-between items-center'>
                     <h3 className='text-sm font-semibold mt-1'>
-                        {name.substring(0, 30)}
+                        {name.length > 30 ? `${name.substring(0, 30)}...` : name}
                     </h3>
+
                     {/* property rating */}
                     <PropertyRating inPage={false} propertyId={propertyId} />
                 </div>
                 <p className='text-sm mt-1 text-muted-foreground'>
-                    {tagline.substring(0, 40)}
+                    {tagline.length > 30 ? `${tagline.substring(0, 30)}...` : tagline}
                 </p>
                 <div className='flex justify-between items-center mt-1'>
                     <p className='text-sm mt-1'>
