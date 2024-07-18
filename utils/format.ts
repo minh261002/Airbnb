@@ -4,6 +4,7 @@ export const formatDate = (date: Date, onlyMonth?: boolean) => {
         year: 'numeric',
         month: 'long',
     };
+
     if (!onlyMonth) {
         options.day = 'numeric';
     }
