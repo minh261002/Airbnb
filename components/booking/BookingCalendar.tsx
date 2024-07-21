@@ -35,7 +35,7 @@ const BookingCalendar = () => {
         });
 
         useProperty.setState({ range });
-    }, [range])
+    }, [range, unavailableDates, toast]);
     return (
         <Calendar mode="range"
             defaultMonth={currentDate}

@@ -16,28 +16,31 @@ const NavSearch = () => {
         if (value) {
             params.set('search', value);
         } else {
-            params.delete('search')
+            params.delete('search');
         }
 
         replace(`/?${params.toString()}`);
-    }, 500);
+    }, 100);
 
     useEffect(() => {
-        if (!searchParams.get('search')) {
-            setSearch('');
+        const searchParam = searchParams.get('search');
+        if (searchParam !== null && searchParam !== search) {
+            setSearch(searchParam);
         }
-    }, [searchParams.get('search')]);
+    }, [searchParams]);
 
-    return <Input
-        type="text"
-        placeholder="Find a property ..."
-        className="max-w-xs dark:bg-muted"
-        value={search}
-        onChange={(e) => {
-            setSearch(e.target.value);
-            handleSearch(e.target.value);
-        }}
-    />
+    return (
+        <Input
+            type="text"
+            placeholder="Find a property ..."
+            className="max-w-xs dark:bg-muted"
+            value={search}
+            onChange={(e) => {
+                setSearch(e.target.value);
+                handleSearch(e.target.value);
+            }}
+        />
+    );
 }
 
-export default NavSearch
+export default NavSearch;

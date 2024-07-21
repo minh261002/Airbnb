@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 // components/Footer.js
 const Footer = () => {
     return (
@@ -6,7 +8,7 @@ const Footer = () => {
                 {/* Column 1 - Logo, Description, Social Icons */}
                 <div className="flex flex-col items-center md:items-start">
                     <div className="mb-4">
-                        <img src='/logo.png' width={120} height={120} className="object-cover" />
+                        <Image alt="logo" src='/logo.png' width={120} height={120} className="object-cover" />
                     </div>
                     <div className="flex space-x-4">
                         <a href="#" className="text-gray-400 hover:text-gray-600">

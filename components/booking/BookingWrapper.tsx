@@ -22,7 +22,7 @@ export default function BookingWrapper({
             price,
             bookings,
         });
-    }, []);
+    }, [bookings, price, propertyId]);
     return (
         <>
             <BookingCalendar />
