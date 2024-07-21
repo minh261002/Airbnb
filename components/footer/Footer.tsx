@@ -3,11 +3,11 @@ import Image from "next/image";
 // components/Footer.js
 const Footer = () => {
     return (
-        <footer className="bg-white">
-            <div className="w-full bg-primary">
+        <footer>
+            <div className="w-full border-t border-primary mt-4 ">
                 <div className=" container sm:flex sm:items-center sm:justify-between py-4">
                     <div className="text-teal-600">
-                        <Image src="/logo_ft.png" alt="logo" width={150} height={150} />
+                        <Image src="/logo.png" alt="logo" width={150} height={150} />
                     </div>
 
                     <ul className="mt-4 flex justify-start gap-6 sm:mt-0 sm:justify-end">
@@ -16,7 +16,7 @@ const Footer = () => {
                                 href="#"
                                 rel="noreferrer"
                                 target="_blank"
-                                className="text-white transition hover:opacity-75"
+                                className="text-gray-700 transition hover:opacity-75"
                             >
                                 <span className="sr-only">Facebook</span>
 
@@ -35,7 +35,7 @@ const Footer = () => {
                                 href="#"
                                 rel="noreferrer"
                                 target="_blank"
-                                className="text-white transition hover:opacity-75"
+                                className="text-gray-700 transition hover:opacity-75"
                             >
                                 <span className="sr-only">Instagram</span>
 
@@ -54,7 +54,7 @@ const Footer = () => {
                                 href="#"
                                 rel="noreferrer"
                                 target="_blank"
-                                className="text-white transition hover:opacity-75"
+                                className="text-gray-700 transition hover:opacity-75"
                             >
                                 <span className="sr-only">Twitter</span>
 
@@ -71,7 +71,7 @@ const Footer = () => {
                                 href="#"
                                 rel="noreferrer"
                                 target="_blank"
-                                className="text-white transition hover:opacity-75"
+                                className="text-gray-700 transition hover:opacity-75"
                             >
                                 <span className="sr-only">GitHub</span>
 
@@ -90,7 +90,7 @@ const Footer = () => {
                                 href="#"
                                 rel="noreferrer"
                                 target="_blank"
-                                className="text-white transition hover:opacity-75"
+                                className="text-gray-700 transition hover:opacity-75"
                             >
                                 <span className="sr-only">Dribbble</span>
 
@@ -107,7 +107,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className="mx-auto max-w-screen-xl space-y-4 px-4 py-8 sm:px-6 lg:space-y-8 lg:px-8">
+            <div className="mx-auto max-w-screen-xl space-y-4 px-4 sm:px-6 lg:space-y-8 lg:px-8">
                 <div
                     className="grid grid-cols-1 gap-8 border-t border-gray-100 sm:grid-cols-2 lg:grid-cols-4 lg:pt-16"
                 >
@@ -196,7 +196,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <p className="text-xs text-gray-500">&copy; 2022. Airbnb. All rights reserved.</p>
+                <p className="pb-8 text-xs text-gray-500">&copy; 2022. Airbnb. All rights reserved.</p>
             </div>
         </footer>
     );
