@@ -1,6 +1,5 @@
 'use client'
 
-import { Input } from '../ui/input'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { useDebouncedCallback } from 'use-debounce'
 import { useState, useEffect } from 'react'
@@ -30,10 +29,10 @@ const NavSearch = () => {
     }, [searchParams]);
 
     return (
-        <Input
+        <input
             type="text"
             placeholder="Find a property ..."
-            className="max-w-xs dark:bg-muted"
+            className="w-full rounded-l-full py-2 px-4 text-gray-700 focus:outline-none border-none"
             value={search}
             onChange={(e) => {
                 setSearch(e.target.value);
