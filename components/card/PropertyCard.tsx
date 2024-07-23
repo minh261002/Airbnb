@@ -18,6 +18,7 @@ function PropertyCard({ property }: { property: PropertyCardProps }) {
                     <Image
                         src={image}
                         fill
+                        loading='lazy'
                         sizes='(max-width:768px) 100vw, 50vw'
                         alt={name}
                         className='rounded-md object-cover transform group-hover:scale-110 transition-transform duration-500'

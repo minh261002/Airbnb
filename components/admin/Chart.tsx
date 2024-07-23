@@ -26,7 +26,7 @@ function Chart({ data }: ChartPropsType) {
           <XAxis dataKey='date' />
           <YAxis allowDecimals={false} />
           <Tooltip />
-          <Bar dataKey='count' fill='#fd595d' barSize={55} />
+          <Bar dataKey='count' fill='#2463eb' barSize={55} />
         </BarChart>
       </ResponsiveContainer>
     </section>

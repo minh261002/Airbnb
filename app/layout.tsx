@@ -24,7 +24,7 @@ export default function RootLayout({
       <Analytics />
       <html lang="en" suppressHydrationWarning>
         <head>
-          <link rel="icon" href="/airbnb.svg" />
+          <link rel="icon" href="/logo.svg" />
         </head>
         <body className={inter.className}>
           <Providers>

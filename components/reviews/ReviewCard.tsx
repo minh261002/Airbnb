@@ -18,7 +18,7 @@ const ReviewCard = ({ reviewInfo, children }: ReviewCardProps) => {
         <Card className="relative">
             <CardHeader>
                 <div className="flex items-center">
-                    <Image src={reviewInfo.image} alt="profile" className="w-12 h-12 rounded-full object-cover" />
+                    <Image src={reviewInfo.image} alt="profile" width={30} height={30} className="w-12 h-12 rounded-full object-cover" />
 
                     <div className="ml-4">
                         <h3 className="text-sm font-bold capitalize mb-1">

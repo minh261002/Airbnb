@@ -32,7 +32,7 @@ const NavSearch = () => {
         <input
             type="text"
             placeholder="Find a property ..."
-            className="w-full rounded-l-full py-2 px-4 text-gray-700 focus:outline-none border-none"
+            className="w-full rounded-l-full py-1 px-4 text-gray-700 dark:text-white focus:outline-none border-none"
             value={search}
             onChange={(e) => {
                 setSearch(e.target.value);

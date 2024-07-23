@@ -1,14 +1,11 @@
-import Image from "next/image";
+import Logo from '@/components/navbar/Logo';
 
-// components/Footer.js
 const Footer = () => {
     return (
         <footer>
             <div className="w-full border-t border-primary mt-4 ">
                 <div className=" container sm:flex sm:items-center sm:justify-between py-4">
-                    <div className="text-teal-600">
-                        <Image src="/logo.png" alt="logo" width={150} height={150} />
-                    </div>
+                    <Logo />
 
                     <ul className="mt-4 flex justify-start gap-6 sm:mt-0 sm:justify-end">
                         <li>
@@ -196,7 +193,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <p className="pb-8 text-xs text-gray-500">&copy; 2022. Airbnb. All rights reserved.</p>
+                <p className="pb-8 text-xs text-gray-500">&copy; 2024. EcoNest.vn | All rights reserved.</p>
             </div>
         </footer>
     );
